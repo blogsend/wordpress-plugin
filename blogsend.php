@@ -21,28 +21,29 @@ class Blogsend_Widget extends WP_Widget {
       'description'   =>  'This helps speed up integration with Wordpress + Blogsend.io'
     );
 
-    parent::__construct( 'blogsend_widget', 'Blogsend.io Widget', $widget_ops );
+    parent::__construct( 'blogsend_widget', 'Blogsend.io', $widget_ops );
   }
 
   public function widget( $args, $instance ) {
-    $api_key = ! empty( $instance['api_key'] ) ? $instance['api_key'] : false;
-
     if (empty( $instance['api_key'] )) {
       echo '';
       return;
     }
 
     ?>
-      <iframe name="blogsend" id="blogsend" src="https://blogsend.io/s/<?php echo $instance['api_key']; ?>/iframe" style="width: 100%; height: 141px;" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+      <iframe name="blogsend" id="blogsend" src="https://blogsend.io/s/embed/<?php echo $instance['api_key']; ?>" style="width: 100%; height: 141px;" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
     <?php
   }
 
   public function form( $instance ) {
     $api_key = ! empty( $instance['api_key'] ) ? $instance['api_key'] : esc_html__( 'Your API Key', 'text_domain' );
 		?>
-		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>"><?php esc_attr_e( 'API Key:', 'text_domain' ); ?></label>
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'api_key' ) ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>">
+    <p>
+      To comlete setting up this site to use Blogsend.io, you just need to go to <a href="https://blogsend.io/?ref=wordpress_widget_panel">login to Blogsend.io</a> and grab your API key. Then paste it below!
+    </p>
+    <p>
+		  <label for="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>"><?php esc_attr_e( 'API Key:', 'text_domain' ); ?></label>
+		  <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'api_key' ) ); ?>" type="text" value="<?php echo esc_attr( $api_key ); ?>">
 		</p>
 		<?php
   }
