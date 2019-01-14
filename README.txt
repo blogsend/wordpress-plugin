@@ -2,7 +2,7 @@
 Contributors: fiiv
 Tags: email, newsletter, automation
 License: GPLv2
-License URI: https://github.com/blogsend/wordpress-plugin/blob/master/LICENSE
+License URI: https://choosealicense.com/licenses/gpl-2.0/
 
  Gather email addresses of your blog\'s readers and automagically email your blog posts to them.
 

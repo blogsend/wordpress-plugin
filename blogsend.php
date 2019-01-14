@@ -5,7 +5,6 @@ Plugin URI:   https://blogsend.io
 Description:  This helps speed up integration with Wordpress + Blogsend.io
 Version:      1.0.0
 Author:       fiiv
-Author URI:   https://blogsend.io
 License:      MIT
 License URI:  https://github.com/blogsend/wordpress-plugin/blob/master/LICENSE
 */
